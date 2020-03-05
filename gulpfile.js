@@ -26,6 +26,7 @@ gulp.task('sass', function() {
     return gulp.src("src/sass/main.sass")
     .pipe(sass())
     .pipe(autoprefixer({
+        browsers: ['last 4 versions'],
         cascade: false
     }))
     .pipe(concatCss("main.css"))

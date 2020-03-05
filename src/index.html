@@ -951,15 +951,19 @@ $(document).ready(function() {
     var subMenuFirst = $('.sub-menu-first');
     var subMenuSecond = $('.sub-menu-second');
     hb.click(function(){
-        hb.toggleClass('is-active');
-        header.toggleClass('is-menu-open');
-        nav.toggleClass('d-lg-block');
-        hasChildrenOne.click(function(){
-            subMenuFirst.toggleClass('d-lg-block');
-        });
-        hasChildrenTwo.click(function(){
-            subMenuSecond.toggleClass('d-lg-block');
-        });
+        if(!hb.hasClass('is-active')) {
+            nav.fadeIn(400);
+        }else{
+            nav.fadeOut(400);
+        }
+    hb.toggleClass('is-active');
+    header.toggleClass('is-menu-open');
+    hasChildrenOne.click(function(){
+        subMenuFirst.toggleClass('d-lg-block');
+    });
+    hasChildrenTwo.click(function(){
+        subMenuSecond.toggleClass('d-lg-block');
+    });
     });
 });
 </script>  
